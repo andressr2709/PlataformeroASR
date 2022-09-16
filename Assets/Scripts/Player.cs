@@ -7,10 +7,16 @@ public class Player : MonoBehaviour
     public float speed;
     private Rigidbody2D rigidBody2D;
     private float horizontal;
+    public float jumpForce;
+    public bool isGrounded; 
+
+
+    private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
       rigidBody2D = GetComponent<Rigidbody2D>();  
+      animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,12 +26,27 @@ public class Player : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal") * speed;
         if(horizontal < 0.0f){
             Debug.Log("-");
-            transform.localScale = new Vector2(-1.0f, 1.0f);
+            transform.localScale = new Vector2(-20.0f, 20.0f);
         }else if(horizontal > 0.0f){
             Debug.Log("-");
-            transform.localScale = new Vector2(1.0f, 1.0f);
+            transform.localScale = new Vector2(20.0f, 20.0f);
         }
+    animator.SetBool("isRunning", horizontal !=0.0f);
 
+    Debug.DrawRay(transform.position, Vector2.down*1.1f,Color.blue);
+    if(Physics2D.Raycast(transform.position, Vector2.down,1.1f)){
+        isGrounded = true;
+    }else{
+        isGrounded = false;
+    }
+    if(Input.GetKeyDown(KeyCode.Space) && isGrounded){
+        Jump();
+    }
+    }
+
+
+    private void Jump(){
+        rigidBody2D.AddForce(Vector2.up * jumpForce);
     }
 
     private void FixedUpdate(){
