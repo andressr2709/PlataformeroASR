@@ -464,7 +464,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_48
+      name: Jump1
       rect:
         serializedVersion: 2
         x: 0
@@ -485,7 +485,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_49
+      name: Jump2
       rect:
         serializedVersion: 2
         x: 8
@@ -506,7 +506,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_50
+      name: Jump3
       rect:
         serializedVersion: 2
         x: 16
@@ -527,7 +527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Player_51
+      name: Jump4
       rect:
         serializedVersion: 2
         x: 24
@@ -623,25 +623,26 @@ TextureImporter:
     nameFileIdTable:
       Player_17: -665609540
       Player_33: 1274762980
-      Player_48: 1043629840
       Player_57: 1380685981
       Player_18: 770422190
+      Jump2: -842948695
       run3: -1693452144
       Player_34: 438200060
       Player_12: 1997508737
       idle1: 2129473940
       Player_29: -1995275066
-      Player_51: 101553558
-      Player_56: 1574954313
       run2: 1044432651
+      Player_56: 1574954313
+      idle2: 1034949717
       Player_9: -1958928266
       Player_14: 700310911
-      idle2: 1034949717
       Player_54: 187809170
       Player_55: 901920573
       Player_16: -1867189850
+      Jump3: -1173186037
       Player_40: -230423509
       Player_8: 1238577065
+      Jump1: 1043629840
       Player_10: -1106285148
       Player_27: -326029522
       run0: 912223307
@@ -660,6 +661,7 @@ TextureImporter:
       Player_30: -967371196
       Player_46: -1414306009
       Player_23: -1749800394
+      Jump4: 101553558
       Player_22: 184701669
       Player_25: -775026740
       run4: -1377925148
@@ -670,7 +672,6 @@ TextureImporter:
       Player_53: -798920197
       Player_31: 758736742
       idle3: 1640311345
-      Player_50: -1173186037
       Player_41: 1579969586
       idle4: -2129095745
       run6: -1290923989
@@ -680,7 +681,6 @@ TextureImporter:
       run1: -407400015
       Player_52: -1860033607
       Player_45: -235683573
-      Player_49: -842948695
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
