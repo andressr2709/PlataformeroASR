@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         rigidBody2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         initialPosition = transform.position;
-        respawnpoint = initialPosition;
+       // respawnpoint = initialPosition;
     }
 
     // Update is called once per frame
@@ -53,17 +53,17 @@ public class Player : MonoBehaviour
             horizontal = Input.GetAxis("Horizontal") * speed;
             if (horizontal < 0.0f)
             {
-                Debug.Log("-");
+                //Debug.Log("-");
                 transform.localScale = new Vector2(-20.0f, 20.0f);
             }
             else if (horizontal > 0.0f)
             {
-                Debug.Log("-");
+                //Debug.Log("-");
                 transform.localScale = new Vector2(20.0f, 20.0f);
             }
             animator.SetBool("isRunning", horizontal != 0.0f);
 
-            Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.blue);
+            //Debug.DrawRay(transform.position, Vector2.down * 1.1f, Color.blue);
 
 
             if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
     public void Death()
     {
         transform.position = initialPosition;
-        respawnpoint = initialPosition;
+        //respawnpoint = initialPosition;
         if (life <= 0)
         {
             life = 2;
@@ -117,10 +117,13 @@ public class Player : MonoBehaviour
                 life -= 1;
                 if (enemy)
                 {
-                    Vector2 difference = (transform.position - enemy.transform.position);
-                    // Vector2 force = difference * knockback;
-                    float knockbackDirection = difference.x >= 0 ? 1 : -1;
-                    rigidBody2D.velocity = new Vector2(knockbackDirection * knockback, knockback);
+                    Vector2 difference = (transform.position - enemy.transform.position).normalized;
+                    Vector2 force = difference * knockback;
+                    float knockbackDirection = force.x >= 0 ? 1 : -1;
+                    rigidBody2D.velocity = new Vector2(knockbackDirection * knockback,knockback/2);
+                   //Vector2 difference = (transform.position - enemy.transform.position);
+                    //float knockbackDirection = difference.x >= 0 ? 1 : -1;
+                    //rigidBody2D.velocity = new Vector2(knockbackDirection * knockback, knockback);
                     //rigidBody2D.AddForce(force * knockback, ForceMode2D.Impulse);
                     //GetComponent<Rigidbody2D>().AddForce(force * knockback + rigidBody2D.velocity, ForceMode2D.Impulse);
                 }

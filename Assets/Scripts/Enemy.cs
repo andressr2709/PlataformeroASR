@@ -19,7 +19,9 @@ public class Enemy : MonoBehaviour
         
     }
     protected void OnTriggerEnter2D(Collider2D collider) {
-        Player player = collider.GetComponent<Player>();
+        //Player player = collider.GetComponent<Player>();
+                Player player = collider.gameObject.GetComponent<Player>();
+
         if(player != null){
             player.Hit(knockback, gameObject);
         }
