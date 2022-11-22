@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 240264213}
   - component: {fileID: 240264212}
   m_Layer: 0
-  m_Name: win
+  m_Name: Win
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1651,7 +1651,7 @@ GameObject:
   - component: {fileID: 521595143}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1684,8 +1684,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  winSpot: {fileID: 240264211}
-  player: {fileID: 863333840}
   checkPoints: []
   isFinal: 0
 --- !u!1 &714643770
